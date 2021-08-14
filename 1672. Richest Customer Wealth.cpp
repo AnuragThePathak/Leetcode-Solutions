@@ -5,6 +5,7 @@ A customer's wealth is the amount of money they have in all their bank accounts.
 */
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 using namespace std;
 
@@ -26,6 +27,22 @@ public:
             }
         }
         return max_wealth;
+
+        // int wealth, max_wealth=0;
+        // for (auto i = accounts.begin(); i !=accounts.end(); i++)
+        // {
+        //     wealth = 0;
+        //     for (auto j = (*i).begin(); j < (*i).end(); j++)
+        //     {
+        //         wealth += *j;
+        //     }
+
+        //     if (max_wealth<wealth)
+        //     {
+        //         max_wealth = wealth;
+        //     }
+        // }
+        // return max_wealth;
     }
 };
 int main()
