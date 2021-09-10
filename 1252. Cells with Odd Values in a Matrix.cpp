@@ -20,27 +20,18 @@ public:
     int oddCells(int m, int n, vector<vector<int>> &indices)
     {
         vector<vector<int>> matrix(m, vector<int>(n));
-        int row_column;
-        for (int i = 0; i < indices.size(); i++)
+        for (int i = 0,row_column; i < indices.size(); i++)
         {
-            for (int j = 0; j < 2; j++)
+            row_column = indices[i][1];
+            for (int k = 0; k < m; k++)
             {
-                row_column = indices[i][j];
-                if (j==1)
-                {
-                    for (int k = 0; k < m; k++)
-                    {
-                        matrix[k][row_column]++;
-                    }
-                }
+                matrix[k][row_column]++;
+            }
 
-                else
-                {
-                    for (int k = 0; k < n; k++)
-                    {
-                        matrix[row_column][k]++;
-                    }
-                }
+            row_column = indices[i][0];
+            for (int k = 0; k < n; k++)
+            {
+                matrix[row_column][k]++;
             }
         }
 
